@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片标签</title>
+</head>
+<body>
+    <!-- 
+        图片标签用于向当前页面中引入一个外部图片
+         使用img标签来引入外部图片，img标签是一个自结束标签
+         img这种元素属于替换元素（块和行内元素之间，具有两种元素的特点）
+         属性：
+            src 属性指定的是外部图片的路径（路径规则和超链接是一样的）
+
+            alt 图片的描述，这个描述默认情况下不会显示，有些浏览器会图片无法加载时显示
+                搜索引擎会根据alt中的内容来识别图片，如果不写alt属性则图片不会被搜索引擎所收录
+            
+            width  图片的宽度（单位是像素）
+            height  图片的高度
+                -宽度和高度如果只修改一个，则另一个会等比例缩放
+            
+            注意：
+                一般情况下在pc端，不建议修改图片的大小，需要多大的图片就裁多大
+                但是在移动端，经常需要对图片进行缩放（大图缩小）
+     -->
+
+    <img src="./img/01.gif" alt="刀">
+
+    <img src="./img/01_no.gif" alt="刀">
+
+    <img src="./img/01_no.gif" alt="">
+
+    <img src="/html/01_introduce/img/02.gif" alt="煞笔">
+
+    <img width="200" referrerpolicy="no-referrer" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2021%252F0416%252F32e3b83fp00qrm7s900gbc000f500jac.png%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666858737&t=5b0d1a3416d0241c68c57ecffb11547c" alt="艺术家">
+
+
+    
+</body>
+</html>
