@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style>
+        /* 
+            [属性名] 选择含有指定属性的元素
+            [属性名=属性值] 选择含有指定属性和属性值的元素
+            [属性名^=属性值] 选择属性值以指定值开头的元素
+            [属性名$=属性值] 选择属性值以指定值结尾的元素
+            [属性名*=属性值] 选择属性值中含有某值的元素
+
+            不能以数字开头
+
+        */
+        [title]{
+            color: red;
+        }
+
+        p[title]{
+            padding-left: 10px;
+        }
+
+        p[title=wym]{
+            font-size: 26px;
+        }
+
+        p[title^=w1]{
+            background: orange;
+        }
+
+        p[title$=ad13]{
+            font-weight: 900;
+        }
+
+        p[title*=m1]{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p title="w1ym">此心不光明1</p>
+    <p title="owym">此心不光明2</p>
+    <p title="wym1223ad13">此心不光明3</p>
+    <div title="wym">此心不光明3</div>
+    <p>此心不光明4</p>
+    <p>此心不光明5</p>
+    <p>此心不光明6</p>
+</body>
+</html>
