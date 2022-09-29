@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器</title>
+    <style>
+        p{
+            font-size: 22px;
+        }
+
+        /* 
+            伪元素，表示页面中一些特殊的并不真实的存在的元素（特殊的位置）
+            伪元素使用 :: 开头
+
+            ::first-letter 表示第一个字母
+            ::first-line 表示第一行
+            ::selection 表示选中的内容
+
+            ::before 元素的开始
+            ::after 元素的最后
+                - before 和 after 必须结合content属性来使用
+        */
+        p::first-letter{
+            font-size: 44px;
+        }
+
+        p::first-line{
+            background-color: yellow;
+        }
+
+        p::selection{
+            background-color: blue;
+        }
+
+        div::before{
+            content: '😂';
+            color: red;
+        }
+
+        div::after{
+            content: 'z';
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <q>hahaha</q>
+    <div>cast away</div>
+    <p>You can't find a star brighter than you when you travel all over the galaxy.</p>
+</body>
+</html>
