@@ -8,18 +8,10 @@
 </head>
 <body>
     <style>
-        /* 
-            :link 用来表示没访问过的链接（正常的链接）
-            link和visited是a标签特有的
-        */
-        a:link{
-            color: red;
-            padding-left: 40px;
+        /* 用来表示鼠标点击 */
+        a:active{
+            color: orange;
         }
-        /* 
-            :visited 用来表示访问过的链接
-            由于隐私的原因，所以visited这个伪类只能修改链接的颜色
-        */
         a:visited{
             color: yellow;
             /* height: 60px; */
@@ -33,11 +25,21 @@
             color: aquamarine;
             font-size: 30px;
         }
-
-        /* 用来表示鼠标点击 */
-        a:active{
-            color: orange;
+        /* 
+            :link 用来表示没访问过的链接（正常的链接）
+            link和visited是a标签特有的
+        */
+        a:link{
+            color: red;
+            padding-left: 40px;
         }
+        /* 
+            :visited 用来表示访问过的链接
+            由于隐私的原因，所以visited这个伪类只能修改链接的颜色
+        */
+        
+
+        
     </style>
 </body>
     <a href="https://www.douyu.com">访问过的链接</a>
