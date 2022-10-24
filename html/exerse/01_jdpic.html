@@ -5,8 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>京东图片练习</title>
+    <style>
+        body, ul, li{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: gray;
+        }
+        li{
+            list-style: none;
+            padding: 5px 10px;
+        }
+        img{
+            vertical-align: top;
+            width: 100%;
+            height: auto;
+        }
+        #pics{
+            background-color: #fff;
+            margin: 30px auto 0;
+            padding-top: 10px;
+            width: 200px;
+        }
+        #pics ul{
+            margin: 0 auto;
+            padding: 10px 0;
+            background-color: #f4f4f4;
+            border-top: 1px solid rgb(223, 223, 223);
+        }
+        #pics ul li:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="pics">
+        <ul>
+            <li><img src="./src/01_1.avif" alt="厨房"></li>
+            <li><img src="./src/01_2.avif" alt="电脑"></li>
+            <li><img src="./src/01_3.avif" alt="冰箱"></li>
+        </ul>
+    </div>
 </body>
 </html>
