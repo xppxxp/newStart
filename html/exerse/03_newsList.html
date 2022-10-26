@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻列表</title>
+    <style>
+        html,
+        body,
+        h2,
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #ccc;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #newslist_wrap {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px 15px 5px 10px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        #newslist_wrap>div {
+            border-top: 1px solid #ccc;
+        }
+
+        #newslist_wrap h2 {
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #404040;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #newslist_wrap h2 span {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            border-top: 1px solid red;
+            margin-top: -1px;
+        }
+
+        #newslist_wrap h2 span:hover a {
+            color: #f34540;
+        }
+
+        #newslist_wrap>div>div {
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        #newslist_wrap>div>div:hover {}
+
+        #newslist_wrap>div>div img {
+            width: 300px;
+            height: 150px;
+            transition: all 0.5s ease;
+        }
+
+        #newslist_wrap>div>div img:hover {
+            transform: scale(1.2);
+        }
+
+        #newslist_wrap>div>div p {
+            background: url(http://static.ws.126.net/f2e/news/index2016/images/sprite_icon0813_v1.png) no-repeat 12px -125px;
+            height: 40px;
+            line-height: 40px;
+            margin-top: -40px;
+            position: relative;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-indent: 36px;
+        }
+
+        #newslist_wrap>div>div p span:first-child {
+            margin-right: 10px;
+        }
+
+        #newslist_wrap ul li {
+            padding-left: 18px;
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        #newslist_wrap ul li:first-child {
+            margin-top: 10px;
+        }
+
+        #newslist_wrap ul li::after {
+            display: block;
+            content: "";
+            width: 4px;
+            height: 4px;
+            position: absolute;
+            left: 3px;
+            top: 50%;
+            margin-top: -2px;
+            background: gray;
+        }
+
+        #newslist_wrap ul li a,
+        #newslist_wrap h2 a {
+            color: #404040;
+        }
+
+        #newslist_wrap ul li a {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            color: rgb(102, 102, 102);
+        }
+
+        #newslist_wrap ul li a:hover {
+            color: #f34540;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="newslist_wrap">
+        <div>
+            <h2><span><a href="#">体育</a></span></h2>
+            <div>
+                <a href="#">
+                    <img src="https://cms-bucket.ws.126.net/2022/1026/5ac265f5j00rkcdjn001nc000go00b4c.jpg?imageView&thumbnail=300y150&type=webp"
+                        alt="克莱">
+                    <p><span>克莱暴怒连吃两T</span><span>生涯首次被驱逐</span></p>
+                </a>
+            </div>
+            <ul>
+                <li><a href="#">有的国脚卖豪宅赚1亿 有的被欠薪没处讨</a></li>
+                <li><a href="#">有的国脚卖豪宅赚1亿 有的被欠薪没处讨</a></li>
+                <li><a href="#">有的国脚卖豪宅赚1亿 有的被欠薪没处讨</a></li>
+                <li><a href="#">有的国脚卖豪宅赚1亿 有的被欠薪没处讨</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
