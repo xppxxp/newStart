@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素的层级</title>
+    <style>
+
+        div{
+            position: absolute;
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: tan;
+            z-index: 3;
+            /* 
+                对于开启了定位元素，可以通过z-index属性来指定元素的层级
+                    z-index需要一个整数作为参数，值越大元素的层级越高
+                        元素的层级越高越优先显示
+
+                如果元素的层级一样，则优先显示靠下的元素
+
+                祖先的层级再高也不会盖住后代元素
+            */
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            opacity: 0.6;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            top: 75px;
+            left: 75px;
+            z-index: 1;
+        }
+
+        .box4{
+            width: 50px;
+            height: 50px;
+            background-color: rebeccapurple;
+            z-index: 5;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3
+        <div class="box4">4</div>
+    </div>
+</body>
+</html>
