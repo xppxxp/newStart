@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w3cschool导航条</title>
+    <style>
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+
+        html{
+            height: 2000px;
+        }
+
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #666;
+        }
+
+        nav{
+            margin: 50px auto;
+            width: 1210px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #E8E7E3;
+            position: sticky;
+            top: 10px;
+            /* 
+                粘滞定位
+                    - 当元素的position属性设置为sticky时则开启了元素的粘滞定位
+                    - 粘滞定位和相对定位的特点基本一致，
+                        不同的是粘滞定位可以在元素到达某个位置时将其固定
+                    - 定位位置相对于其包含块
+            */
+        }
+
+        nav li{
+            float: left;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        nav li:hover{
+            background: #666;
+        }
+
+        nav li:hover a{
+            color: #fff;
+        }
+
+        nav li a{
+            display: block;
+            /* width: 172px; */
+            /* box-sizing: border-box; */
+            padding: 0 49px;
+        }
+
+        nav li:last-child a{
+            padding: 0 55px;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 1000px;margin-top:200px">
+    <nav>
+        <ul>
+            <li><a href="#">HTML/CSS</a></li>
+            <li><a href="#">Browser Side</a></li>
+            <li><a href="#">Server Side</a></li>
+            <li><a href="#">Programming</a></li>
+            <li><a href="#">XML</a></li>
+            <li><a href="#">Web Building</a></li>
+            <li><a href="#">Reference</a></li>
+        </ul>
+    </nav>
+    </div>
+</body>
+</html>
