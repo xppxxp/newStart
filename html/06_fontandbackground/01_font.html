@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体</title>
+    <style>
+        body{
+            font-size: 40px;
+        }
+
+        @font-face {
+            font-family: 'niubi';
+            src: url("./font/Personal Use.otf") format(OpenType),
+                 url("./font/Personal Use.ttf") format(TrueType);
+        }
+        p{
+            /* 
+                字体相关的样式
+                    color 用来设置字体颜色
+                    font-size 字体的大小
+                        和font-size相关的单位
+                            em 相当于当前元素的一个font-size
+                            rem 相当于根元素的一个font-size
+                    font-family 字体族（字体的格式）
+                        可选值：
+                            serif 衬线字体
+                            sans-serif 非衬线字体
+                            monospace 等宽字体
+                                - 指定字体的类别，浏览器会自动使用该类别下的字体
+                        - font-family 可以同时指定多个字体，多个字体使用，隔开
+                            字体生效时优先使用第一个，第一个无法使用则使用第二个 以此类推
+
+                           "Microsoft YaHei", "Heiti SC", tahoma, arial, "Hiragino Sans GB", 宋体, sans-serif;
+
+            */
+            color: aqua;
+            font-family: 'niubi';
+            /* font-size: 1em; */
+        }
+    </style>
+</head>
+<body>
+    <p>今天天气真不错！hello world!eeeeeeeeeeeee</p>
+</body>
+</html>
