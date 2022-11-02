@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本的样式</title>
+    <style>
+        p{
+            /* 
+                text-decoration 设置文本修饰
+                    可选值
+                        none 什么都没有
+                        underline 下划线
+                        line-through 删除线
+                        overline  上划线
+            */
+            text-decoration:underline forestgreen dotted;
+        }
+
+        div{
+            width: 400px;
+            /* 
+                white-space 设置网页如何处理空白
+                    可选值：
+                        normal 正常
+                        nowrap 不换行
+                        pre 保留空白
+            */
+            white-space: nowrap;
+            overflow:hidden ;
+            text-overflow: ellipsis;
+        }
+
+        section{
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <p>生死于欧明发士大夫</p>
+    <div>
+        今天天气真不粗！I don't know what I do now is right, those are wrong, and when I finally die then I know these. So what I can do now is to try to do everything well, and then wait to die .Sometimes I can be very happy to talk to everyone, can be very presumptuous, but no one knows, it is but very deliberatelycamouflage, camouflage; I can make him very happy very happy, but couldn't find the source of happiness, just giggle.
+    </div>
+    <section>a
+           b
+            c
+    </section>
+</body>
+</html>
