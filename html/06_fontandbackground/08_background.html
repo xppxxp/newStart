@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            /* 设置背景颜色 */
+            background-color: aquamarine;
+            background-image: url(./img/1.png);
+            /* 
+                设置背景图片
+                    -可以同时设置背景图片和背景颜色，这些背景颜色将成为图片的背景色
+                    -如果背景的图片小于元素，则背景图片会自动在元素中平铺将元素铺满
+                    -如果背景图片大于元素，将会一个部分背景无法完全显示
+                    -如果背景图片和元素一样大，则会直接正常显示
+            */
+            background-repeat: no-repeat;
+            /* 
+                background-repeat 用来设置背景的重复方式
+                    可选值 
+                        repeat 默认值 背景会沿着x轴 y轴双方向重复
+                        repeat-x 沿着x轴方向重复
+                        repeat-y 沿着y轴方向重复
+            */
+
+            /* 
+                background-position 用来设置图片背景的位置
+                    设置方式
+                        通过 top left right bottom center 几个表示方向的词来设置背景
+                        九宫格
+            */
+            background-position: bottom right;
+            background-size: 10px;
+        }
+        /* 
+            - background 背景相关的简写属性，所有背景xiang'guan'de'yang
+        */
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>
