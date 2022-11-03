@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "217235",
+      "name": "android",
+      "font_class": "android",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "938273",
+      "name": "iphone",
+      "font_class": "iphone",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "1160787",
+      "name": "ipad",
+      "font_class": "ipad",
+      "unicode": "e823",
+      "unicode_decimal": 59427
+    },
+    {
+      "icon_id": "7736208",
+      "name": "map-marker",
+      "font_class": "map-marker",
+      "unicode": "e8fe",
+      "unicode_decimal": 59646
+    },
+    {
       "icon_id": "15838406",
       "name": "column-3",
       "font_class": "3column",
