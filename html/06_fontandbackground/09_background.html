@@ -66,6 +66,21 @@
             background-attachment: fixed;
 
         }
+        /* 
+            - background 背景相关的简写属性，所有背景相关的样式都可以通过该样式来设置
+                并且该样式没有顺序要求，也没有哪些属性是必须写的
+
+                注意：
+                    background-size必须写在background-position的后边，并且使用/隔开
+                        background-size/background-position
+        */
+        .box3{
+            width: 300px;
+            height: 300px;
+            border: 10px solid gray;
+            padding: 20px;
+            background: red url(./img/an.jpg) left center/90px 30px content-box content-box no-repeat;
+        }
 
     </style>
 </head>
@@ -75,5 +90,6 @@
             ssssssssssssssssssssssssss
             rtewwwwwwwwwwwwwtyreeeeeeeeejhgddddddddnbntrhg</div>
     </div>
+    <div class="box3"></div>
 </body>
 </html>
