@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片列表项</title>
+    <link rel="stylesheet" href="../06_fontandbackground/iconfont/iconfont.css">
+    <style>
+        body{
+            background-color: #f0efee;
+        }
+        ul{
+            margin: 30px auto;
+            width: 1024px;
+        }
+        ul::after,ul::before{
+            display: table;
+            clear: both;
+            content: '';
+        }
+        ul li{
+            list-style: none;
+            background-color: #fff;
+        }
+        ul li:not(:last-child){
+            margin-right: 17px;
+        }
+        li{
+            width: 240px;
+            border-radius: 2px;
+            color: #acaaaa;
+            float: left;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+        }
+        li>*:not(img){
+            padding-left:20px;
+            padding-right:16px;
+        }
+        li img{
+            width: 100%;
+            vertical-align: top;
+        }
+        li h2{
+            margin-top: 4px;
+            margin-bottom: 0;
+            height: 44px;
+            line-height: 44px;
+            font-size: 18px;
+            color: #717171;
+        }
+        li h2+div{
+            font-size: 16px;
+            height: 14px;
+            line-height: 14px;
+            margin-bottom: 20px;
+        }
+        li h2+div i{
+            margin-right: 4px;
+        }
+        li p{
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 20px;
+        }
+        li>div:last-child{
+            border-top: 1px solid #acaaaa45;
+            height: 46px;
+            line-height: 46px;
+        }
+        li>div:last-child::after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        li>div:last-child i{
+            float:left;
+            width: 18px;
+            height: 17px;
+            margin-right: 2px;
+            margin-top: 15px;
+            background: url(src/gray_star.png);
+        }
+        li>div:last-child i.active{
+            background: url(src/green_star.png);
+        }
+        li>div:last-child span{
+            float:right;
+            width: 21px;
+            height: 21px;
+            margin-top: 14px;
+            background: url(./src/facebook.png);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="./src/list-avatar.png" alt="图片头部">
+            <h2>Animation films</h2>
+            <div><i class="iconfont icon-map-marker"></i>Movies</div>
+            <p>Lorem Ipsum is simply dummy text of the printing & typesetting industry. </p>
+            <div>
+                <i class="active"></i>
+                <i class="active"></i>
+                <i></i>
+                <i></i>
+                <span></span>
+            </div>
+        </li>
+        <li>
+            <img src="./src/1.jpg" alt="图片头部">
+            <h2>Animation films</h2>
+            <div><i class="iconfont icon-map-marker"></i>Movies</div>
+            <p>Lorem Ipsum is simply dummy text of the printing & typesetting industry. </p>
+            <div>
+                <i class="active"></i>
+                <i class="active"></i>
+                <i></i>
+                <i></i>
+                <span></span>
+            </div>
+        </li>
+        <li>
+            <img src="./src/list-avatar2.png" alt="图片头部">
+            <h2>Animation films</h2>
+            <div><i class="iconfont icon-map-marker"></i>Movies</div>
+            <p>Lorem Ipsum is simply dummy text of the printing & typesetting industry. </p>
+            <div>
+                <i class="active"></i>
+                <i class="active"></i>
+                <i></i>
+                <i></i>
+                <span></span>
+            </div>
+        </li>
+        <li>
+            <img src="./src/list-avatar1.png" alt="图片头部">
+            <h2>Animation films</h2>
+            <div><i class="iconfont icon-map-marker"></i>Movies</div>
+            <p>Lorem Ipsum is simply dummy text of the printing & typesetting industry. </p>
+            <div>
+                <i class="active"></i>
+                <i class="active"></i>
+                <i></i>
+                <i></i>
+                <span></span>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
