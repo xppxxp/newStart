@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的样式</title>
+</head>
+<style>
+    table{
+        border: 1px solid #000;
+        width: 60%;
+        margin: 30px auto;
+
+        /* 
+            指定边框之间的距离
+        */
+        border-spacing: 0px;
+
+        /* 
+            设置边框的合并
+        */
+        border-collapse: collapse;
+
+    }
+
+    /* 
+        如果表格中没有使用tbody而是直接使用tr,
+            那么浏览器会自动创建一个tbody,并且将tr全部放入到tbody中
+            tr 不是table的子元素
+    */
+     table>tbody>tr:nth-of-type(even){
+        background-color: aquamarine;
+    }
+
+    td{
+        border: 1px solid #000;
+        text-align: center;
+        /* 
+            在默认情况下元素在td中是垂直居中的  可以通过 vertical-align:middle来设置
+            相比于其他元素的,这个时候的middle是真垂直居中
+        */
+        vertical-align: middle;
+        height: 66px;
+    }
+
+
+    .box1{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .box2{
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+
+    }
+</style>
+
+<body>
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <!-- <div class="box1">
+        <div class="box2"></div>
+    </div> -->
+    <table>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>地址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>23</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>23</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>23</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>23</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>23</td>
+            <td>高老庄</td>
+        </tr>
+    </table>
+</body>
+
+</html>
