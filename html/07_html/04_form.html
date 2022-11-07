@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 
+        - 在现实生活中表单用于提条数据
+        - 在网页中也可以使用表单,网页中的表单用于将本地的数据提交给远程的服务器
+        - 使用form标签来创建一个表单
+     -->
+     <!-- 
+        form的属性
+            action 表单要提交的服务器的地址
+      -->
+    <form action="http://www.baidu.com">
+        <!-- 
+            文本框
+            注意数据要提交到服务器中，必须要为元素指定一个name属性
+         -->
+         <input type="text" name="username">
+         <br><br>
+         <!-- 
+            密码框
+          -->
+        密码框<input type="password" name="password">
+
+        <br><br>
+        <!-- 
+            单选按钮
+                - 像这种选择框，必须要指定一个value属性，value属性最终会作为用户的填写的值传递给服务器
+                - checked 可以将单选按钮设置为默认选中
+         -->
+        单选按钮
+        <input type="radio" name="radio" value="1">
+        <input type="radio" name="radio" checked value="2">
+        <br><br>
+        <!-- 
+            多选框
+         -->
+         多选框<input type="checkbox" name="test" value="1">
+         <input type="checkbox" name="test" value="2">
+         <input type="checkbox" name="test" value="3">
+         <br><br>
+
+         <!-- 
+            下拉列表
+          -->
+          <select name="select" id="select">
+                <option value="1">rtr</option>
+                <option value="2">55</option>
+                <option value="3">44</option>
+                <option value="4">323</option>
+                <option value="5">21</option>
+          </select>
+          <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
