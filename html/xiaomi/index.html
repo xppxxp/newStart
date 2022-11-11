@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        小米商城 - Xiaomi 12、Redmi K50、MIX FOLD，小米电视官方网站
+    </title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        body {
+            font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+        }
+
+        .center {
+            margin: 0 auto;
+            width: 1226px;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+
+        header {
+            background-color: #333333;
+            line-height: 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        header .center {
+            background-color: #333333;
+        }
+
+
+        header .header_left,
+        header li {
+            float: left;
+        }
+
+        header .header_right {
+            float: right;
+        }
+
+        header li {
+            position: relative;
+            padding: 0 8px;
+        }
+
+        header .header_left>li:first-child {
+            padding-left: 0;
+        }
+
+
+        header li a {
+            display: inline-block;
+            color: #a4a4a4;
+            font-size: 12px;
+            vertical-align: top;
+
+        }
+
+        header li:hover a {
+            color: #fff;
+        }
+
+        header ul li:not(:last-child)::after {
+            display: block;
+            content: '';
+            width: 1px;
+            height: 13px;
+            position: absolute;
+            right: 0px;
+            top: 15px;
+            background-color: #3f3f3f;
+        }
+
+        .header_right li:last-child {
+            background-color: #424242;
+            padding: 0;
+            height: 40px;
+            margin-left: 14px;
+        }
+
+        .header_right li:last-child .iconfont {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+
+        .header_right li:last-child a {
+            padding: 0 18px;
+        }
+
+        .header_right li:last-child:hover a {
+            color: #ff6700;
+            background-color: #fff;
+            padding-bottom: 1px;
+        }
+
+        .header_right .no_after::after {
+            display: none;
+        }
+
+        .download:hover div {
+            height: 148px;
+        }
+
+        .download div,
+        .shop_car div {
+            transition: height ease 0.2s;
+            position: absolute;
+            height: 0px;
+            overflow: hidden;
+            top: 40px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+            box-shadow: 0 1px 5px #aaa;
+        }
+
+        .download div {
+            width: 124px;
+            margin-left: -60px;
+            left: 50%;
+        }
+
+        .shop_car a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .shop_car div {
+            width: 316px;
+            right: 0;
+        }
+
+        .shop_car div {
+            text-align: center;
+        }
+
+        .shop_car div p {
+            font-size: 12px;
+            color: #424242;
+            margin-top: 10px;
+            padding: 20px 0 20px;
+        }
+
+        .shop_car:hover div {
+            height: 100px;
+        }
+
+        .shop_car:hover div {
+            box-shadow: 0 2px 10px #aaaaaa33;
+        }
+
+        .download:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -8px;
+            border-width: 8px;
+            border-style: solid;
+            cursor: pointer;
+            border-color: transparent transparent #fff;
+        }
+
+        .download div img {
+            width: 90px;
+            height: 90px;
+            margin: 18px 0 12px;
+            vertical-align: top;
+        }
+
+        .download div p {
+            font-size: 14px;
+            height: 14px;
+            line-height: 14px;
+            color: #333;
+        }
+
+        /* 头部导航搜索 */
+        nav {
+            height: 100px;
+            font-size: 16px;
+            position: relative;
+        }
+
+
+        nav>.center>ul>li,
+        nav .header-logo,
+        nav>.center>ul {
+            float: left;
+        }
+
+        nav .search {
+            float: right;
+
+        }
+
+        nav a {
+            color: #333;
+        }
+
+        nav .header-logo {
+            width: 240px;
+        }
+
+        nav .header-logo a {
+            display: inline-block;
+            width: 57px;
+            margin-top: 21px;
+            height: 57px;
+            background: url(./img/header_logo.png) 0 0/57px 57px;
+        }
+
+        nav ul {
+            padding: 20px 0 2px;
+        }
+
+        nav>.center>ul>li>a {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            padding: 20px 10px 38px;
+        }
+
+        nav .center ul li:hover a {
+            color: #ff6700;
+        }
+
+        nav .center ul li:first-child a {
+            padding-left: 0;
+        }
+
+        .search {
+            margin-top: 25px;
+        }
+
+        .search * {
+            transition: all 0.3s;
+
+        }
+
+        .search label>* {
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            outline: none;
+            float: left;
+            vertical-align: bottom;
+        }
+
+        .search input {
+            padding: 0 10px;
+            width: 245px;
+            border-right: none;
+            color: #757575;
+        }
+
+        .search input::-webkit-search-cancel-button {
+            display: none;
+        }
+
+        .search button {
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            cursor: pointer;
+
+        }
+
+        .search:hover * {
+            border-color: #b0b0b0;
+
+        }
+
+        .search:hover input {
+            color: #333;
+        }
+
+        .search button:hover {
+            background-color: #ff6700;
+            border-color: #ff6700;
+        }
+
+        button:hover i {
+            color: #fff;
+        }
+
+        .search input:focus,
+        .search input:focus+button {
+            border-color: #ff6700;
+        }
+
+        .search i {
+            font-size: 26px;
+            font-weight: bold;
+            color: #656565;
+        }
+
+        .header_content {
+            width: 100%;
+            height: 0;
+            border-top: 1px solid #e0e0e0;
+            border-top-width: 0;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            transition: 0.3s;
+            background-color: #fff;
+            box-shadow: 0 3px 4px rgb(0 0 0 / 18%);
+            z-index: 4;
+
+        }
+
+        .header_content li {
+            position: relative;
+            width: 180px;
+            float: left;
+            padding: 15px 12px 0;
+            text-align: center;
+        }
+
+        li a.nav_show:hover+.header_content,
+        .header_content:hover {
+            height: 230px;
+            border-top-width: 1px;
+        }
+
+        .header_content li:not(:first-child)::before {
+            content: '';
+            width: 1px;
+            height: 100px;
+            background-color: #e0e0e0;
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+
+        .header_content li img {
+            width: 160px;
+            height: 110px;
+            vertical-align: top;
+        }
+
+        .header_content li h2 {
+            /* height: 20px; */
+            line-height: 20px;
+            color: #333;
+            font-size: 12px;
+        }
+
+        .header_content li h3 {
+            font-size: 12px;
+            line-height: 20px;
+            color: #ff6700;
+        }
+
+
+        main .category {
+            float: left;
+            position: relative;
+            width: 234px;
+            padding: 20px 0;
+            background-color: rgba(105, 101, 101, .6);
+            z-index: 1;
+        }
+
+        main .category:hover div {
+            display: block;
+        }
+
+        main .category ul li {
+            cursor: pointer;
+            padding: 0 20px;
+            height: 42px;
+            line-height: 42px;
+            color: #fff;
+        }
+
+        main .category>ul li:hover {
+            background-color: #ff6700;
+        }
+
+        main .category ul li:hover i {
+            color: #e0e0e0;
+        }
+
+        main .category ul li i {
+            float: right;
+        }
+
+        .category .category_content {
+            border: 1px solid #e0e0e0;
+            border-left: 0;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 234px;
+            width: 795px;
+            display: none;
+            box-shadow: 0 8px 16px rgb(0 0 0 / 18%)
+        }
+
+        .category .category_content ul {
+            width: 265px;
+            float: left;
+        }
+
+        .category .category_content ul li {
+            height: 40px;
+            padding: 18px 20px;
+            color: #333;
+        }
+
+        .category .category_content ul li:hover {
+            color: #ff6700;
+        }
+
+        .category .category_content ul li img {
+            width: 40px;
+            height: 40px;
+            vertical-align: top;
+        }
+
+        main .tab_right {
+            height: 460px;
+            position: relative;
+        }
+
+        main .tab_right ul {
+            position: relative;
+        }
+
+        main .tab_right ul li {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        main .tab_right img {
+            display: inline-block;
+            width: 100%;
+            height: 460px;
+            vertical-align: top;
+        }
+
+        main .tab_right .tab_dot {
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+
+        main .tab_right .tab_dot span {
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            background-color: #00000040;
+            margin-right: 5px;
+            width: 6px;
+            height: 6px;
+            border-color: hsla(0, 0%, 100%, .3);
+        }
+
+        main .tab_right .tab_dot span:hover,
+        main .tab_right .tab_dot .active {
+            background: hsla(0, 0%, 100%, .4);
+            border-color: rgba(0, 0, 0, .4);
+        }
+
+        main .tab_right i {
+            vertical-align: middle;
+        }
+
+        main .tab_right .prev,
+        main .tab_right .next {
+            position: absolute;
+            top: 50%;
+            width: 41px;
+            height: 69px;
+            margin-top: -35px;
+            font-size: 40px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        main .tab_right .prev:hover,
+        main .tab_right .next:hover {
+            background-color: #33333330;
+        }
+
+        main .tab_right .prev {
+            left: 234px;
+            transform: rotate(180deg);
+        }
+
+        main .tab_right .next {
+            right: 0;
+        }
+
+        .fix_bar {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            margin-left: 613px;
+            border: 1px solid #f5f5f5;
+            border-bottom: none;
+        }
+
+        .fix_bar a {
+            text-align: center;
+            line-height: 42px;
+            display: block;
+            color: #757575;
+            /* width: 100%; */
+            height: 42px;
+            font-size: 18px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .fix_bar a:hover {
+            color: #ff6700;
+        }
+
+        .home-hreo-sub {
+            /* float: left; */
+            margin: 20px auto 50px;
+            height: 170px;
+            
+
+        }
+
+        .home-hreo-sub .sub-nav {
+            height: 170px;
+            width: 234px;
+            background-color: #5f5750;
+            padding: 1px;
+            float: left;
+        }
+
+        .sub-nav ul li {
+            width: 70px;
+            height: 82px;
+            text-align: center;
+            float: left;
+            padding: 0 3px;
+            position: relative;
+        }
+
+        .sub-nav ul li::before,
+        .sub-nav ul li::after {
+            display: block;
+            content: '';
+            position: absolute;
+            background-color: #665e57;
+
+        }
+
+        .sub-nav ul li::before {
+            top: 6px;
+            left: 0;
+            width: 1px;
+            height: 70px;
+        }
+
+        .sub-nav ul li::after {
+            top: 1px;
+            left: 6px;
+            width: 64px;
+            height: 1px;
+
+        }
+
+        .sub-nav ul li a {
+            display: block;
+            color: #ffffff;
+            font-size: 12px;
+            padding-top: 18px;
+            opacity: 0.7;
+        }
+
+        .sub-nav ul li a:hover {
+            opacity: 1;
+        }
+
+        .home-hreo-sub ul li a i {
+            display: block;
+            height: 30px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .sub-content {
+            float: left;
+            margin-left: 10px;
+            width: 978px;
+            height: 170px;
+        }
+
+        .sub-content li{
+            float: left;
+            margin-right: 5px;
+        }
+
+        .sub-content li img{
+            width: 316px;
+            height: 170px;
+            vertical-align: top;
+        }
+
+        .sub-content li:hover{
+            box-shadow: 0px 15px 30px #00000020;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="center clearfix">
+            <ul class="header_left">
+                <li><a href="javascript:;">小米官网</a></li>
+                <li><a href="javascript:;">小米商城</a></li>
+                <li><a href="javascript:;">MIUI</a></li>
+                <li><a href="javascript:;">IoT</a></li>
+                <li><a href="javascript:;">云服务</a></li>
+                <li><a href="javascript:;">天星数科</a></li>
+                <li><a href="javascript:;">有品</a></li>
+                <li><a href="javascript:;">小爱开放平台</a></li>
+                <li><a href="javascript:;">企业团购</a></li>
+                <li><a href="javascript:;">资质证照</a></li>
+                <li><a href="javascript:;">协议规则</a></li>
+                <li class="download">
+                    <a href="javascript:;">下载app</a>
+                    <div>
+                        <img src="./img/download.png" alt="下载">
+                        <p>小米商城APP</p>
+                    </div>
+                </li>
+                <li><a href="javascript:;">Select Location</a></li>
+            </ul>
+            <ul class="header_right">
+                <li><a href="javascript:;">登录</a></li>
+                <li><a href="javascript:;">注册</a></li>
+                <li class="no_after"><a href="javascript:;">消息通知</a></li>
+                <li class="shop_car">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-gouwuchekong"></i><span>购物车</span><span>（0）</span>
+                    </a>
+                    <div>
+                        <p>购物车中还没有商品，赶紧选购吧！</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="center clearfix">
+            <div class="header-logo">
+                <a href="javscript:;"></a>
+            </div>
+            <ul class="clearfix">
+                <li>
+                    <a href="javascript" class="nav_show">Xiaomi手机</a>
+                    <div class="header_content">
+                        <ul class="clearfix center">
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript" class="nav_show">Redmi手机</a>
+                    <div class="header_content">
+                        <ul class="clearfix center">
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="./img/header_content.jpg" alt="手机">
+                                    <h2>Redmi Note 12 Pro</h2>
+                                    <h3>1699元起</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="javascript" class="nav_show">电视</a></li>
+                <li><a href="javascript" class="nav_show">笔记本</a></li>
+                <li><a href="javascript" class="nav_show">平板</a></li>
+                <li><a href="javascript" class="nav_show">家电</a></li>
+                <li><a href="javascript" class="nav_show">路由器</a></li>
+                <li><a href="javascript">服务中心</a></li>
+                <li><a href="javascript">社区</a></li>
+            </ul>
+            <div class="search">
+                <label for="">
+                    <input type="search" placeholder="显示器">
+                    <button type="submit"><i class="iconfont icon-search"></i></button>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <main class="center">
+        <div class="category">
+            <ul>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+                <li>手机<i class="iconfont icon-jiantou-xiangyou"></i></li>
+            </ul>
+            <div class="category_content">
+                <ul>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                </ul>
+                <ul>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                </ul>
+                <ul>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                    <li><img src="./img/category_list.png" alt="分类列表"><span>Redmi Note 12 Pro+</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab_right">
+            <ul>
+                <li>
+                    <a href="javascript:;">
+                        <img src="./img/tab.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="./img/tab.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="./img/tab.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="tab_dot">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="prev"><i class="iconfont icon-24gl-arrowRight2"></i></div>
+            <div class="next"><i class="iconfont icon-24gl-arrowRight2"></i></div>
+        </div>
+    </main>
+    <ul class="fix_bar">
+        <li><a href="javscript:;" class="iconfont icon-shouji"></a></li>
+        <li><a href="javscript:;" class="iconfont icon-gerenzhongxin"></a></li>
+        <li><a href="javscript:;" class="iconfont icon-shouhoufuwu"></a></li>
+        <li><a href="javscript:;" class="iconfont">&#xec2e;</a></li>
+        <li><a href="javscript:;" class="iconfont icon-gouwuchekong"></a></li>
+    </ul>
+    <div class="center home-hreo-sub">
+        <div class="sub-nav">
+            <ul class="clearfix">
+                <li><a href="javascript:;"><i class="iconfont icon-shouji"></i><span>保障服务</span></a></li>
+                <li><a href="javascript:;"><i class="iconfont icon-shouji"></i><span>保障服务</span></a></li>
+                <li><a href="javascript:;"><i class="iconfont icon-shouji"></i><span>保障服务</span></a></li>
+                <li><a href="javascript:;"><i class="iconfont icon-shouji"></i><span>保障服务</span></a></li>
+                <li><a href="javascript:;"><i class="iconfont icon-shouji"></i><span>保障服务</span></a></li>
+                <li><a href="javascript:;"><i class="iconfont icon-shouji"></i><span>保障服务</span></a></li>
+            </ul>
+        </div>
+        <ul class="sub-content">
+            <li><a href="javascript:;"><img src="./img/hero_content.jpg" alt="广告"></a></li>
+            <li><a href="javascript:;"><img src="./img/hero_content.jpg" alt="广告"></a></li>
+            <li><a href="javascript:;"><img src="./img/hero_content.jpg" alt="广告"></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
