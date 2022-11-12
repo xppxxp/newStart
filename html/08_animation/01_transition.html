@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: aqua;
+        }
+
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+        }
+
+        .box1 .box2{
+            background-color: green;
+            /* transition: all 2s; */
+            /* 
+                过渡（transition）
+                    - 通过过渡可以指定一个属性发生变化时的切换方式
+                    - 通过过渡可以创建一些非常好的效果，提升用户的体验
+            */
+
+            /* 
+                transition-property: 指定要执行过渡的属性
+                    多个属性间使用，隔开
+                    如果所有属性都需要过渡，则使用all关键字
+                    大部分属性都支持过渡效果，注意过渡时必须从一个有效值向另外一个有效值进行过渡
+            */
+
+            transition-property: all;
+            
+            /* 
+                transition-duration:指定过渡效果的持续时间
+                    时间单位：s和ms 1s=1000ms
+            */
+            transition-duration:2s;
+            margin-left: 0;
+
+            /* transition-timing-function 
+                    指定过渡的执行的方式
+                    ease 默认值，慢速开始，先加速，在减速
+                    linear 匀速运动
+                    ease-in 加速
+                    ease-out 减速
+                    ease-in-out 先加速在减速
+
+                    cubic-bezier() 来指定时序函数
+
+                    steps() 分布执行过渡效果
+            */
+            transition-timing-function:cubic-bezier(.17,1.28,.37,-0.46);
+            transition-timing-function:steps(3,start);
+
+            /* transition-delay:过渡效果的延迟，等待相应的时间以后 */
+            transition-delay: 4s;
+
+
+        }
+
+
+        .box1:hover .box2{
+            /* background-color: blue; */
+            /* width: 200px;
+            height: 200px; */
+            margin-left: 700px;
+        }
+
+        .box1 .box3{
+            transition-property: all;
+            transition-duration: 2s;
+            background-color: bisque;
+        }
+
+        .box1:hover .box3{
+            margin-left: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
