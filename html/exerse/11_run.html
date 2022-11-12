@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奔跑的少年</title>
+    <style>
+        @keyframes run{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1280px 0;
+            }
+        }
+        div.box1{
+            width: 256px;
+            height: 256px;
+            margin: 50px auto;
+            background-repeat: no-repeat;
+            background-image: url(./src/bg2.png);
+            animation: run 0.0002s steps(5) infinite 2s ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

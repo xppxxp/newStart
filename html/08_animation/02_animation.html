@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        /* 
+            动画
+                动画和过渡类似，都是可以实现一些动态的效果，
+                    不同的是过渡需要在某个属性发生变化时才会触发
+                    动画可以自动触发动态效果
+
+                设置动画效果，必须先要设置一个关键帧，关键帧设置了动画执行的每一个步骤
+        */
+        @keyframes shake {
+            /* 表示动画的开始位置,也可以使用0% */
+            from{
+                margin-left: 100px;
+            }
+            /* 表示动画的结束位置，也可以使用100% */
+            to{
+                margin-left: 1100px;
+            }
+        }
+
+
+        .box1{
+            width:100px;
+            height:100px;
+            animation-name:shake;
+            background-color: red;
+            animation-duration: 2s;
+            /* 
+                动画执行的次数
+            */
+            animation-iteration-count: infinite;
+            /* 
+                animation-fill-mode: 动画的填充模式
+                    可选值：
+                        none 默认值 动画执行完毕元素回到原来位置
+                        forwards 动画执行完毕元素会停在动画结束的位置
+                        backwards 动画延时等待时，元素就处在开始位置
+                        both 结合了forwards 和 backwards
+            */
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+            /* 
+                animation-direction
+                    指定动画运行的方向
+                        默认值normal从from向to运行每次都是这样
+                        reverse 从to向from运行 每次都是这样
+                        alternate 从from向to运行 重复执行动画时反向执行
+                        alternate-reverse 从to向from运行 重复执行动画时反向执行
+            */
+            animation-direction: alternate;
+            animation-delay: 1s;
+            /* 
+                设置动画的执行状态
+                可选值：
+                    running 默认值 动画执行
+                    pased 动画暂停
+            */
+            animation-play-state: paused;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
