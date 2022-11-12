@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @keyframes jump{
+            0%{
+                margin-top: 0;
+            }
+            40%{
+                margin-top: 200px;
+            }
+            80%{
+                margin-top: 300px;
+            }
+            20%,60%,100%{
+                margin-top: 450px;
+            }
+        }
+
+        .box{
+            height: 500px;
+            border-bottom: 10px solid #000;
+        }
+
+        .box div{
+            animation: jump 2s ease infinite forwards alternate;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            float: left;
+            background-color: aqua;
+        }
+
+        .box div:nth-child(1){
+            background-color: red;
+            animation-delay: 0s;
+        }
+
+        .box div:nth-child(2){
+            background-color: aqua;
+            animation-delay: 0.1s;
+        }
+
+        .box div:nth-child(3){
+            background-color: wheat;
+            animation-delay: 0.2s;
+        }
+
+        .box div:nth-child(4){
+            background-color: green;
+            animation-delay: 0.3s;
+        }
+
+        .box div:nth-child(5){
+            background-color: darkgoldenrod;
+            animation-delay: 0.4s;
+        }
+
+        .box div:nth-child(6){
+            background-color:tomato;
+            animation-delay: 0.5s;
+        }
+
+        .box div:nth-child(7){
+            background-color: darkcyan;
+            animation-delay: 0.6s;
+        }
+
+        .box div:nth-child(8){
+            background-color: rebeccapurple;
+            animation-delay: 0.7s;
+        }
+
+        .box div:nth-child(8){
+            background-color: olivedrab;
+            animation-delay: 0.8s;
+        }
+
+        .box div:nth-child(9){
+            background-color: salmon;
+            animation-delay: 0.9s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
