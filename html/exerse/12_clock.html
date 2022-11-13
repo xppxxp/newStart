@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+            background: url(./src/bg3.jpg) 0 0/cover;
+        }
+
+        .sec-wrapper,
+        .minutes-wrapper,
+        .hours-wrapper {
+            width: 80%;
+            height: 90%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            animation: run infinite 6s linear;
+        }
+
+        .minutes-wrapper {
+            height: 80%;
+            animation-duration: 360s;
+        }
+
+        .hours-wrapper {
+            height: 70%;
+            animation-duration: 4320s;
+        }
+
+        .sec-wrapper .sec,
+        .minutes-wrapper .minutes,
+        .hours-wrapper .hours {
+            width: 2px;
+            height: 50%;
+            background-color: greenyellow;
+            margin: 0 auto;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .hours-wrapper .hours {
+            width: 6px;
+            height: 50%;
+            background-color: black;
+        }
+
+        .minutes-wrapper .minutes {
+            width: 4px;
+            height: 50%;
+            background-color: yellowgreen;
+        }
+
+
+
+
+        @keyframes run {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* .clock  */
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+        <div class="minutes-wrapper">
+            <div class="minutes"></div>
+        </div>
+        <div class="hours-wrapper">
+            <div class="hours"></div>
+        </div>
+    </div>
+</body>
+
+</html>
