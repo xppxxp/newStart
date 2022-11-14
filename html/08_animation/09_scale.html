@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缩放</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            border: 1px solid red;
+            margin: 100px auto;
+
+            /* 
+                变形的原点 默认值center
+                transform-origin:20px 20px;
+            */
+            overflow: hidden;
+        }
+
+        img:hover{
+            /* 
+                对元素进行缩放的函数:
+                    scaleX()  水平方向缩放
+                    scaley()  垂直方向方向缩放
+                    scale()  双方向的缩放
+            */
+            transform: scale(2);
+        }
+
+        img{
+            transition: 2s;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img src="../06_fontandbackground/img/an.jpg" alt="美女">
+    </div>
+</body>
+</html>
