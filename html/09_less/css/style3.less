@@ -1,0 +1,55 @@
+.box1{
+    .box2{
+        color: red;
+    }
+    >.box3{
+        color: aqua;
+        &:hover{
+            color: bisque;
+        }
+    }
+    //为box1设置一个hover
+    // & 就表示外层的父元素
+    &:hover{
+        background-color: blue;
+    }
+    div &{
+        height: 200px;
+    }
+
+}
+
+.p1{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
+
+//:extend() 对当前选择器扩展指定选择器的样式（选择器分组）
+.p2:extend(.p1){
+    font-size: 30px;
+}
+.p2:extend(.box1>.box3){
+    
+}
+
+.p3{
+    //直接对指定的样式进行引用，这里就相当于将p1的样式在这里进行了复制
+    //mixin 混合
+    .p1();
+}
+
+//使用类选择器时可以在选择器后边添加一个括号，这时我们实际上就创建了一个mixins
+.p1() {
+    color: green;
+    width: 100px;
+}
+
+.p3{
+    .p1;
+}
+
+.p2{
+    .p1;
+}
+
