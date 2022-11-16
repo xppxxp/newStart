@@ -1,0 +1,30 @@
+ul {
+  width: 600px;
+  display: flex;
+  border: 1px solid green;
+  padding: 0;
+  flex-direction: row;
+  text-align: center;
+  line-height: 100px;
+  flex-wrap: wrap;
+}
+ul li {
+  width: 300px;
+  height: 100px;
+  list-style: none;
+}
+ul li:nth-child(1) {
+  background-color: red;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+ul li:nth-child(2) {
+  background-color: blue;
+  flex-grow: 2;
+  flex-shrink: 2;
+}
+ul li:nth-child(3) {
+  background-color: yellow;
+  flex-shrink: 3;
+}
+/*# sourceMappingURL=./01_flex.css.map */
