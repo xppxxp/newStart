@@ -1,3 +1,27 @@
+/*
+    css中的注释，内容会被解析到css文件中
+*/
+div {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}
+div .box1 {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+}
+div .box1 .box2 {
+  width: 100px;
+  height: 400px;
+  background-color: yellow;
+  background-image: url('box2/1.png');
+}
+div .box3 {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+}
 .box1 .box2 {
   color: red;
 }
@@ -44,3 +68,19 @@ div .box1 {
   color: green;
   width: 100px;
 }
+.test {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+  width: 400px;
+}
+span {
+  color: #800080;
+}
+body {
+  background-color: aqua;
+}
+body:hover {
+  background-color: #000000;
+}
+/*# sourceMappingURL=./style3.css.map */
