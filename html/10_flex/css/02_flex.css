@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul {
+  width: 1200px;
+  border: 10px solid red;
+  display: flex;
+  height: 500px;
+  /*
+        flex-flow wrap和direction的简写属性
+    */
+  flex-flow: column wrap;
+  justify-content: space-around;
+  /*
+        align-items:
+            - 元素在辅轴上如何对齐
+            - 元素间的关系
+             - 可选值：
+                stretch 默认值，将元素的高度设置为相同的值
+                flex-start 元素不会拉伸，沿着辅轴起边对齐
+                flex-end 沿着辅轴的终边对齐
+                center 居中对齐
+                baseline 基线对齐
+    */
+  align-items: flex-start;
+}
+ul li {
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  width: 500px;
+}
+ul li:first-child {
+  background-color: yellow;
+}
+ul li:nth-child(2) {
+  background-color: aqua;
+  align-self: center;
+}
+ul li:last-child {
+  background-color: bisque;
+}
+ul li div {
+  height: 60px;
+}
+/*# sourceMappingURL=./02_flex.css.map */

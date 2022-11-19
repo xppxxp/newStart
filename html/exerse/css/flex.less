@@ -1,0 +1,46 @@
+@color:#666;
+html,body,ul,li{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: @color;
+}
+
+nav{
+    margin: 50px auto;
+    width: 1210px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #E8E7E3;
+    ul{
+        display: flex;
+        li{
+            text-align: center;
+            font-size: 14px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            &:hover{
+                background: @color;
+                a{
+                    color: #fff;
+                }
+            }
+    
+            a{
+                display: block;
+                /* width: 172px; */
+                /* box-sizing: border-box; */
+                padding: 0 49px;
+            }
+            &:last-child a{
+                padding: 0 55px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@w:1200px;
+@h:500px;
+
+ul{
+    width: @w;
+    border: 10px solid red;
+    display: flex;
+    // flex-wrap: wrap;
+    height: @h;
+    // flex-direction: row;
+    /*
+        flex-flow wrap和direction的简写属性
+    */
+    flex-flow: column wrap;
+    //justify-content
+    // - 如何分配主轴上的空白空间（主轴上的元素如何排列）
+    // - 可选值：flex-start元素沿着主轴起边排列 flex-end元素沿着主轴终边排列 center元素居中排列 
+    //      space-around空白分布到元素两侧 space-between空白均匀分布到元素间 space-evenly空白分布到元素的单侧
+    justify-content:space-around;
+
+    //辅轴空白空间的分布
+    // align-content: center;
+    /*
+        align-items:
+            - 元素在辅轴上如何对齐
+            - 元素间的关系
+             - 可选值：
+                stretch 默认值，将元素的高度设置为相同的值
+                flex-start 元素不会拉伸，沿着辅轴起边对齐
+                flex-end 沿着辅轴的终边对齐
+                center 居中对齐
+                baseline 基线对齐
+    */
+    align-items: flex-start;
+
+    li{
+        text-align: center;
+        line-height: 40px;
+        font-size: 30px;
+        width: 500px;
+        // height: 100px;
+        &:first-child{
+            background-color: yellow;
+        }
+        &:nth-child(2){
+            background-color: aqua;
+            //用来覆盖当前弹性元素的align-items
+            align-self: center;
+        }
+        &:last-child{
+            background-color: bisque;
+        }
+        div{
+            height: 60px;
+        }
+    }
+}
+
