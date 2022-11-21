@@ -1,0 +1,51 @@
+@h:200px;
+ul{
+    width: 800px;
+    height: @h;
+    border: 10px solid gray;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+    line-height: @h;
+    padding: 0;
+    li{
+        width: 400px;
+        height: 200px;
+        &:first-child{
+            background-color: red;
+            /*
+                弹性的增长系数
+            */
+            flex-grow: 1;
+            //弹性元素的缩减系数
+            // - 缩减系数的计算方式比较复杂
+            // - 缩减多少是根据缩减系数和元素大小来计算
+            flex-shrink: 1;
+            //元素基本长度 指定的是元素在主轴上的基础长度
+            //如果主轴是横向的 则该指定的就是元素的宽度
+            //如果主轴是纵向的则该指定的是元素的高度 默认值是auto,表示参考元素自身的高度或宽度
+            //如果传递了一个具体的数值，则以该值为准
+            flex-basis: 100px;
+
+            //flex可以设置弹性元素所有的三个样式 flex 增长 缩减 基础
+            //initial "flex: 0 1 auto"
+            //auto "flex: 1 1 auto"
+            //none "flex：0 0 auto"弹性元素没有弹性
+            flex: 1 2 100px;
+            order: 3;
+        }
+        &:nth-child(2){
+            background-color: aqua;
+            flex-grow: 2;
+            flex-shrink: 2;
+            order: 1;
+        }
+        &:last-child{
+            background-color: blue;
+            flex-grow: 3;
+            flex-shrink: 3;
+            order: 2;
+        }
+    }
+}

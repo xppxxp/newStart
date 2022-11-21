@@ -1,0 +1,39 @@
+ul {
+  width: 800px;
+  height: 200px;
+  border: 10px solid gray;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  line-height: 200px;
+  padding: 0;
+}
+ul li {
+  width: 400px;
+  height: 200px;
+}
+ul li:first-child {
+  background-color: red;
+  /*
+                弹性的增长系数
+            */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100px;
+  flex: 1 2 100px;
+  order: 3;
+}
+ul li:nth-child(2) {
+  background-color: aqua;
+  flex-grow: 2;
+  flex-shrink: 2;
+  order: 1;
+}
+ul li:last-child {
+  background-color: blue;
+  flex-grow: 3;
+  flex-shrink: 3;
+  order: 2;
+}
+/*# sourceMappingURL=./03_flex.css.map */
