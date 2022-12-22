@@ -24,7 +24,7 @@ ul {
                 center 居中对齐
                 baseline 基线对齐
     */
-  align-items: flex-start;
+  align-items: flex-end;
 }
 ul li {
   text-align: center;
@@ -37,7 +37,7 @@ ul li:first-child {
 }
 ul li:nth-child(2) {
   background-color: aqua;
-  align-self: center;
+  align-self: flex-start;
 }
 ul li:last-child {
   background-color: bisque;

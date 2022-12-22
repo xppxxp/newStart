@@ -37,7 +37,7 @@ ul{
                 center 居中对齐
                 baseline 基线对齐
     */
-    align-items: flex-start;
+    align-items: flex-end;
 
     li{
         text-align: center;
@@ -51,7 +51,7 @@ ul{
         &:nth-child(2){
             background-color: aqua;
             //用来覆盖当前弹性元素的align-items
-            align-self: center;
+            align-self: flex-start;
         }
         &:last-child{
             background-color: bisque;
