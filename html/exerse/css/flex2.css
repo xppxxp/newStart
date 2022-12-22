@@ -1,0 +1,33 @@
+html,
+body,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.nav {
+  width: 100%;
+}
+.nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.nav ul li {
+  width: 16%;
+  text-align: center;
+}
+.nav ul li img {
+  width: 100%;
+}
+.nav ul li span {
+  display: block;
+  font-size: 14px;
+  color: #000;
+}
+/*# sourceMappingURL=./flex2.css.map */
