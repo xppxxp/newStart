@@ -25,8 +25,7 @@ div .box3 {
 .box1 .box2 {
   color: red;
 }
-.box1 > .box3,
-.p2 {
+.box1 > .box3 {
   color: aqua;
 }
 .box1 > .box3:hover {
@@ -40,7 +39,7 @@ div .box1 {
 }
 .p1,
 .p2 {
-  width: 200px;
+  width: 400px;
   height: 200px;
   background-color: aqua;
 }
@@ -48,21 +47,21 @@ div .box1 {
   font-size: 30px;
 }
 .p3 {
-  width: 200px;
+  width: 400px;
   height: 200px;
   background-color: aqua;
   color: green;
   width: 100px;
 }
 .p3 {
-  width: 200px;
+  width: 400px;
   height: 200px;
   background-color: aqua;
   color: green;
   width: 100px;
 }
 .p2 {
-  width: 200px;
+  width: 400px;
   height: 200px;
   background-color: aqua;
   color: green;

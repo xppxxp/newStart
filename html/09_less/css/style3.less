@@ -22,7 +22,7 @@
 }
 
 .p1{
-    width: 200px;
+    width: @a;
     height: 200px;
     background-color: aqua;
 }
@@ -30,9 +30,6 @@
 //:extend() 对当前选择器扩展指定选择器的样式（选择器分组）
 .p2:extend(.p1){
     font-size: 30px;
-}
-.p2:extend(.box1>.box3){
-    
 }
 
 .p3{
