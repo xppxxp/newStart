@@ -25,8 +25,7 @@ nav ul {
 nav ul li {
   text-align: center;
   font-size: 14px;
-  flex-grow: 1;
-  flex-shrink: 1;
+  flex: auto;
 }
 nav ul li:hover {
   background: #666;
@@ -36,11 +35,5 @@ nav ul li:hover a {
 }
 nav ul li a {
   display: block;
-  /* width: 172px; */
-  /* box-sizing: border-box; */
-  padding: 0 49px;
-}
-nav ul li:last-child a {
-  padding: 0 55px;
 }
 /*# sourceMappingURL=./flex.css.map */

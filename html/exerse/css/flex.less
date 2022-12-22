@@ -22,8 +22,7 @@ nav{
         li{
             text-align: center;
             font-size: 14px;
-            flex-grow: 1;
-            flex-shrink: 1;
+            flex: auto;
             &:hover{
                 background: @color;
                 a{
@@ -33,13 +32,8 @@ nav{
     
             a{
                 display: block;
-                /* width: 172px; */
-                /* box-sizing: border-box; */
-                padding: 0 49px;
             }
-            &:last-child a{
-                padding: 0 55px;
-            }
+            
         }
     }
 }
