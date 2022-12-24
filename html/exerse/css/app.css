@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html {
+  font-size: 5.33333333vw;
+  background: #eff0f4;
+}
+a {
+  text-decoration: none;
+}
+.top-bar {
+  margin: 1.85rem 0.75rem 1.55rem;
+  display: flex;
+  height: 1rem;
+  line-height: 1rem;
+  justify-content: space-between;
+}
+.top-bar .menu-btn {
+  align-self: flex-start;
+}
+.top-bar .logo {
+  font-size: 1rem;
+}
+.top-bar .logo a {
+  color: #24253d;
+}
+.top-bar .search {
+  align-self: flex-end;
+}
+.top-bar i {
+  color: #999;
+  font-size: 1rem;
+}
+.top-bar .icon-search {
+  color: eff0f4;
+}
+.top-banner {
+  margin: 0 0.75rem;
+}
+.top-banner img {
+  width: 100%;
+  border-radius: 0.25rem;
+  vertical-align: top;
+}
+.categroy {
+  margin: 0.125rem 0.75rem;
+}
+.categroy ul::after,
+.categroy ul::before {
+  display: table;
+  content: '';
+  clear: both;
+}
+.categroy li {
+  float: left;
+  color: #fff;
+  width: 8.15rem;
+  height: 2.65rem;
+  line-height: 2.65rem;
+  font-size: 0.6rem;
+  margin-top: 0.9rem;
+  background: #f97053;
+  box-shadow: 5px 5px 8px #bbbbbb;
+  border-radius: 0.25rem;
+}
+.categroy li:nth-child(even) {
+  float: right;
+}
+.categroy li:nth-child(1) {
+  background-image: linear-gradient(90deg, #f47866, #f97053);
+}
+.categroy li:nth-child(2) {
+  background-image: linear-gradient(90deg, #d484fd, #c657ff);
+}
+.categroy li:nth-child(3) {
+  background-image: linear-gradient(90deg, #fe497c, #ff3971);
+}
+.categroy li:nth-child(4) {
+  background-image: linear-gradient(90deg, #1bc9fb, #1d92ff);
+}
+.categroy li i {
+  font-size: 1rem;
+  margin: 0 0.7rem 0 1.1rem;
+  vertical-align: middle;
+}
+.list .title {
+  margin: 1.25rem 0.75rem 1rem;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list .title h2 {
+  font-size: 0.65rem;
+  color: #24253d;
+  border-left: 0.075rem solid #3a84ff;
+  padding-left: 0.425rem;
+}
+.list .title a {
+  font-size: 0.55rem;
+  color: #656565;
+  vertical-align: bottom;
+}
+.list .pics-list {
+  margin-left: 0.75rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+}
+.list .pics-list .pic {
+  width: 8.25rem;
+  background: #fff;
+  flex: 0 0 auto;
+  margin-right: 0.55rem;
+  box-shadow: 5px 5px 8px #bbbbbb;
+  border-radius: 0.25rem;
+}
+.list .pics-list .pic > div {
+  padding: 0.6rem 0.5rem;
+}
+.list .pics-list .pic > div img {
+  width: 100%;
+  vertical-align: top;
+}
+.list .pics-list .pic > div p {
+  height: 1.65rem;
+  line-height: 1.65rem;
+  font-size: 0.625rem;
+  color: #24253d;
+}
+.list .pics-list .pic > div div {
+  height: 1.05rem;
+  line-height: 1.05rem;
+}
+.list .pics-list .pic > div div img {
+  width: 1.05rem;
+  height: 1.05rem;
+  vertical-align: top;
+}
+.list .pics-list .pic > div div span {
+  font-size: 0.5rem;
+  color: #969393;
+  vertical-align: top;
+}
+/*# sourceMappingURL=./app.css.map */
