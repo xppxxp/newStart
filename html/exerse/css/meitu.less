@@ -1,0 +1,146 @@
+a{
+    color: #fff;
+    &:hover{
+        opacity: 0.6;
+    }
+}
+// 导航条的外部容器
+.top-bar{
+    height: 48px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    //设置左侧的导航
+    .left-menu{
+        // position: relative;
+        .menu-icon{
+            padding: 0 20px;
+            height: 48px;
+
+            //导航的线
+            li{
+                position: absolute;
+                width: 18px;
+                height: 1px;
+                background-color: #fff;
+                transform-origin: left center;
+                transition: 300ms;
+            }
+            li:nth-child(1){
+                top: 18px;
+            }
+            li:nth-child(2){
+                top: 24px;
+            }
+            li:nth-child(3){
+                top: 30px;
+            }
+
+        }
+
+        &:active{
+            .menu-icon{
+                li:nth-child(1){
+                    transform: rotateZ(40deg);
+                }
+                li:nth-child(2){
+                    opacity: 0;
+                }
+                li:nth-child(3){
+                    transform: rotateZ(-40deg);
+                }
+            }
+           
+            .nav{
+                display: block;
+            }
+        }
+
+        .nav{
+            position: absolute;
+            // display: none;
+            background-color: #000;
+            padding: 30px 10% 0;
+            top: 48px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 14px;
+            color: #fff;
+            li{
+                border-bottom: 1px solid #ffffff30;
+                line-height: 40px;
+                span{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    .logo {
+        a{
+            text-indent: -999px;
+            display: block;
+            width: 122px;
+            height: 32px;
+            background-image: url(../src/sprite.png);
+            background-size: 400px;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    .user-info{
+        padding: 0 20px;
+        i{
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+}
+
+//设置媒体查询
+@media only screen {
+    @media(min-width:1050px){
+        .top-wrapper{
+            background:#000;
+        }
+        .top-bar {
+            max-width:1280px;
+            margin:0 auto;
+            .left-menu{
+                order:2;
+                flex:auto;
+                .menu-icon{
+                    display:none;
+                }
+                .nav{
+                    position: static;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0;
+                    li{
+                        border-bottom: none;
+                        flex: auto;
+                        text-align: center;
+                        span{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .logo{
+            order:1;
+
+        }
+
+        .user-info{
+            order: 3;
+        }
+    }
+}

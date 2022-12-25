@@ -1,0 +1,119 @@
+a {
+  color: #fff;
+}
+a:hover {
+  opacity: 0.6;
+}
+.top-bar {
+  height: 48px;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar .left-menu .menu-icon {
+  padding: 0 20px;
+  height: 48px;
+}
+.top-bar .left-menu .menu-icon li {
+  position: absolute;
+  width: 18px;
+  height: 1px;
+  background-color: #fff;
+  transform-origin: left center;
+  transition: 300ms;
+}
+.top-bar .left-menu .menu-icon li:nth-child(1) {
+  top: 18px;
+}
+.top-bar .left-menu .menu-icon li:nth-child(2) {
+  top: 24px;
+}
+.top-bar .left-menu .menu-icon li:nth-child(3) {
+  top: 30px;
+}
+.top-bar .left-menu:active .menu-icon li:nth-child(1) {
+  transform: rotateZ(40deg);
+}
+.top-bar .left-menu:active .menu-icon li:nth-child(2) {
+  opacity: 0;
+}
+.top-bar .left-menu:active .menu-icon li:nth-child(3) {
+  transform: rotateZ(-40deg);
+}
+.top-bar .left-menu:active .nav {
+  display: block;
+}
+.top-bar .left-menu .nav {
+  position: absolute;
+  background-color: #000;
+  padding: 30px 10% 0;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  color: #fff;
+}
+.top-bar .left-menu .nav li {
+  border-bottom: 1px solid #ffffff30;
+  line-height: 40px;
+}
+.top-bar .left-menu .nav li span {
+  margin-left: 5px;
+}
+.top-bar .logo a {
+  text-indent: -999px;
+  display: block;
+  width: 122px;
+  height: 32px;
+  background-image: url(../src/sprite.png);
+  background-size: 400px;
+}
+.top-bar .logo a:hover {
+  opacity: 1;
+}
+.top-bar .user-info {
+  padding: 0 20px;
+}
+.top-bar .user-info i {
+  font-size: 18px;
+  color: #fff;
+}
+@media only screen and (min-width: 1050px) {
+  .top-wrapper {
+    background: #000;
+  }
+  .top-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .top-bar .left-menu {
+    order: 2;
+    flex: auto;
+  }
+  .top-bar .left-menu .menu-icon {
+    display: none;
+  }
+  .top-bar .left-menu .nav {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .top-bar .left-menu .nav li {
+    border-bottom: none;
+    flex: auto;
+    text-align: center;
+  }
+  .top-bar .left-menu .nav li span {
+    display: none;
+  }
+  .logo {
+    order: 1;
+  }
+  .user-info {
+    order: 3;
+  }
+}
+/*# sourceMappingURL=./meitu.css.map */
