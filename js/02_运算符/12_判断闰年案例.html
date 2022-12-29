@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var year = prompt('请输入年份');
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+           alert('闰年');
+        } else {
+            alert('平年');
+        }
+
+        // 判断是否中奖
+        var yName = prompt('姓名');
+        if (yName == '刘德华') {
+            alert('中');
+        } else {
+            alert('不中');            
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
