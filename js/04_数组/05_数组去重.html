@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 数组去掉0
+        var oldArr = [0, 1, 2, 2, 44, 0, 333];
+        var newArr = [];
+
+        for (var i = 0; i < oldArr.length; i++) {
+            if (oldArr[i] !== 0) {
+                newArr[newArr.length] = oldArr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
