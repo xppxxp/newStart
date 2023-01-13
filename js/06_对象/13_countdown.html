@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 倒计时 2023-1-15
+        var newTime = +new Date('2023-1-15 0:0:0');
+        var nowTime = Date.now();
+        var gap = newTime - nowTime;
+        var iDays = Math.floor(gap/60/60/24/1000);
+        var iHours = Math.floor(gap/60/60/1000%24);
+        var iMins = Math.floor(gap/1000/60%60);
+        var iSecs = Math.floor(gap/1000%60);
+
+        console.log('还剩' + iDays + '天' + iHours + '小时' + iMins + '分' + iSecs + '秒');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

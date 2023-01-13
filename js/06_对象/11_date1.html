@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 格式化日期 时分秒
+        var date = new Date();
+        console.log(date.getHours()); // 时
+        console.log(date.getSeconds()); // 秒
+        console.log(date.getMinutes()); // 分
+
+        function nowTime() {
+            // 写当前时间
+            var date = new Date();
+            var iHours = date.getHours() > 10 ? date.getHours() : '0' + date.getHours();
+            var iMins = date.getMinutes() > 10 ? date.getMinutes() : '0' + date.getMinutes();
+            var iSecs = date.getSeconds() > 10 ? date.getSeconds() : '0' + date.getSeconds();
+            var iWeeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+            console.log('现在是' + iHours + '点' + iMins + '分' + iSecs + '秒');
+        }
+
+        nowTime();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

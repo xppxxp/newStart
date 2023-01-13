@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var num = Math.floor(Math.random() * 11);
+        var i = 0;
+
+        while (true) {
+            if (i == 2) {
+                alert('别猜了');
+                break;
+            }
+            var inpNum = Number(prompt('请输入数字'));
+            i++;
+            if (inpNum != inpNum) {
+                alert('您输入的不是数字');
+                continue;
+            }
+            if (inpNum > num) {
+                alert('大了');
+            } else if (inpNum < num) {
+                alert('小了');
+            } else {
+                alert('对了');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

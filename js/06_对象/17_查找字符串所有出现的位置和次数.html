@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var str = 'adsfdsfregdfavsdafsdafafdsa';
+        var arr = [];
+        var arr1 = ['red', '', 'yellow', 'blue', 'red'];
+        var arr1Index = arr1.indexOf('red');
+        var arrIndex = 0;
+
+        while (str.indexOf('a', arrIndex)!= -1) {
+            arr.push(str.indexOf('a', arrIndex));
+            arrIndex = str.indexOf('a', arrIndex) + 1;
+        }
+
+        while (arr1Index!= -1) {
+            console.log(arr1Index);
+            arr1Index = arr1.indexOf('red', arr1Index + 1);
+        }
+        
+        console.log(arr, arr.length);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

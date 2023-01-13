@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // date() 日期对象 是一个构造函数 必须使用new 来调用创建我们的日期对象
+        var arr = new Array();
+        var obj = new Object();
+        // 使用Date 如果没有参数 返回当前系统的当前时间
+        var iDate = new Date();
+        // 参数常用的写法 数字型 2019, 10, 01 或者是字符串型 '2019-10-1 8:8:8'
+        var date1 = new Date(2018, 0, 1, 1, 1, 1); // 返回的是一月
+        var date1 = new Date('2018-1-1 2:2:2');
+
+        console.log(iDate, date1);
+
+        // 格式化日期 年月日
+        var date = new Date();
+        console.log(date.getFullYear()); // 返回当前日期的年
+        console.log(date.getMonth()); // 返回当前日期的月 返回的月份小一个月
+        console.log(date.getDate()); // 返回当前日期的几号
+        console.log(date.getDay()); // 返回当前日期的星期 周日返回的0
+
+        // 写当前日期
+        var iYear = date.getFullYear();
+        var iMon = date.getMonth() + 1;
+        var iDates = date.getDate();
+        var iWeek = date.getDay();
+        var iWeeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+        console.log('今天是 ' + iYear + '年' + iMon + '月' + iDates + '日 ' + iWeeks[iWeek]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

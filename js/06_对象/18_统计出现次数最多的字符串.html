@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var str = 'adsffffeeeeeeeeeeeedsfregdfavsdafsdafafdsa';
+        var arr = [];
+        var obj = {};
+        var max = 1;
+        var strName = str.charAt(0);
+
+        for (var i = 0; i < str.length; i++) {
+            var index = str.charAt(i);
+            if (obj[index]) {
+                obj[index]++;
+            } else {
+                obj[index] = 1;
+            }
+        }
+
+        for (var attr in obj) {
+            if (max < obj[attr]) {
+                max = obj[attr];
+                strName = attr;
+            }
+        }
+
+        console.log(max, strName);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
