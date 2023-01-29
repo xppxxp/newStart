@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3863370_2dnb73pm7m8.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #999;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 50px auto;
+            width: 500px;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+<script>
+    var datas = [{
+        name: '魏璎珞',
+        subject: 'JavaScript',
+        score: 100
+    }, {
+        name: '弘历',
+        subject: 'JavaScript',
+        score: 98
+    }, {
+        name: '傅恒',
+        subject: 'JavaScript',
+        score: 99
+    }, {
+        name: '明玉',
+        subject: 'JavaScript',
+        score: 88
+    }, {
+        name: '大猪蹄子',
+        subject: 'JavaScript',
+        score: 0
+    }];
+
+    var oTbody = document.querySelector('tbody');
+
+    for (var i = 0; i < datas.length; i++) {
+        createEl (datas[i]);
+    }
+
+    function createEl (obj) {
+        var oTr = document.createElement('tr');
+        var aTd = null;
+        var oTd = null;
+        for (var attr in obj) {
+            aTd = document.createElement('td');
+            aTd.innerHTML = obj[attr];
+            oTr.appendChild(aTd);
+        }
+
+        oTd = document.createElement('td');
+        oTd.innerHTML = '<a href="javascript:;">删除</a>';
+        oTd.children[0].onclick = function () {
+            oTbody.removeChild(oTd.parentNode);
+        }
+        oTr.appendChild(oTd);
+        oTbody.appendChild(oTr);
+    }
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3863370_2dnb73pm7m8.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        #wrapper {
+            height: 40px;
+            display: flex;
+            margin: 100px 0 0 50px;
+        }
+
+        #wrapper>li{
+            position: relative;
+        } 
+        
+        #wrapper li>a{
+            display: block;
+            line-height: 40px;
+            color: #333;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+
+        #wrapper li:hover >a{
+            background-color: #e5e5df;
+        }
+
+        #wrapper li>a i{
+            color: orange;
+            vertical-align: bottom;
+        }
+
+        #wrapper li>ul{
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            border-left: 1px solid orange;
+            border-right: 1px solid orange;
+            box-shadow: 2px 0 5px #aab7aa91;
+        }
+
+        #wrapper li>ul li{
+            height: 30px;
+            padding-left: 15px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #333;
+            border-bottom: 1px solid orange;
+        }
+
+        #wrapper li>ul li:hover{
+            color: orange;
+            background-color: #f4dbac;
+            cursor: pointer;
+        }
+
+        #wrapper li .show{
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul id="wrapper">
+        <li>
+            <a href="javascript:;">微博<i class="iconfont icon-xiala"></i></a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">微博<i class="iconfont icon-xiala"></i></a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">微博<i class="iconfont icon-xiala"></i></a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script>
+    var aA = document.querySelectorAll('#wrapper>li');
+    for (var i = 0; i < aA.length; i++) {
+        aA[i].onmouseover = function () {
+            this.children[1].setAttribute('class','show');
+        }
+        aA[i].onmouseout = function () {
+            this.children[1].removeAttribute('class');
+        }
+    }
+
+
+</script>
+
+</html>

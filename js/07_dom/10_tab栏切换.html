@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #tab {
+            width: 800px;
+            margin: 100px auto;
+        }
+
+        .tab_list {
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            display: flex;
+            height: 40px;
+            line-height: 40px;
+
+        }
+
+        .tab_list li{
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        .tab_list li:hover{
+            color: red;
+        }
+
+        .tab_list li.active{
+            background-color: red;
+            color: #fff;
+            text-align: center
+        }
+
+        .tab_con{
+            padding: 20px;
+        }
+
+        .tab_con li{
+            display: none;
+        }
+
+        .tab_con li.show{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab">
+        <ul class="tab_list">
+            <li class="active">商品介绍</li>
+            <li>规格与包装</li>
+            <li>售后保障</li>
+            <li>商品评价（50000）</li>
+            <li>手机社区</li>
+        </ul>
+        <ul class="tab_con">
+            <li class="show">商品介绍模块内容</li>
+            <li>规格与包装模块内容</li>
+            <li>售后保障模块内容</li>
+            <li>商品评价（50000）模块内容</li>
+            <li>手机社区模块内容</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var aTabLi = document.querySelectorAll('#tab .tab_list li');
+    var aTabConLi = document.querySelectorAll('#tab .tab_con li');
+    var index = 0;
+    for (var i = 0; i < aTabLi.length; i++) {
+        aTabLi[i].setAttribute('index', i);
+        // console.log( aTabLi[i].dataset.index );
+        aTabLi[i].onclick = function () {
+            aTabLi[index].removeAttribute('class');
+            this.className = 'active';
+            aTabConLi[index].removeAttribute('class');
+            aTabConLi[this.getAttribute('index')].className = 'show';
+            index = this.getAttribute('index');
+        }
+    }
+
+
+</script>
+
+</html>

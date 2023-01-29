@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+            width: 200px;
+            padding: 0;
+            border: 1px solid #ccc;
+        }
+
+        .search {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        .search .con {
+            display: none;
+            min-width: 200px;
+            font-size: 26px;
+            height: 30px;
+            border: 1px solid #ccc;
+            box-shadow: 0 3px 3px #00000030;
+            position: absolute;
+            top: 10px;
+        }
+
+        .search .con::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 6px solid #fff;
+            border-right: 6px solid transparent;
+            border-left: 6px solid transparent;
+            bottom: -5px;
+            left: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+    </div>
+</body>
+<script>
+    var oSearch = document.querySelector('.search');
+    var oInp = oSearch.querySelector('.jd');
+    var oCon = oSearch.querySelector('.con');
+    var val = '';
+    oInp.addEventListener('keyup', function (ev) {
+        val = this.value;
+        if (val !== '') {
+            oCon.style.display = 'block';
+            oCon.innerHTML = val;
+        } else {
+            oCon.style.display = 'none';
+            // oCon.innerHTML = val;
+        }
+    })
+
+    oInp.addEventListener('blur', function (ev) {
+        oCon.style.display = 'none';
+    })
+
+    oInp.addEventListener('focus', function (ev) {
+        val = this.value;
+        if (val !== '') {
+            oCon.style.display = 'block';
+            oCon.innerHTML = val;
+        } else {
+            oCon.style.display = 'none';
+            // oCon.innerHTML = val;
+        }
+    })
+</script>
+
+</html>

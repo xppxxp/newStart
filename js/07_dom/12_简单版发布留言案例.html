@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3863370_2dnb73pm7m8.css">
+    <style>
+        input {
+            vertical-align: bottom;
+        }
+
+        textarea {
+            vertical-align: bottom;
+        }
+
+        li{
+            list-style: none;
+            color: red;
+        }
+
+        li a{
+            float:right;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <textarea></textarea>
+        <input type="submit" value="发布">
+    </div>
+    <ul>
+
+    </ul>
+</body>
+<script>
+    var oInp = document.querySelector('input');
+    var oUl = document.querySelector('ul');
+    var val = '';
+    var oText = oInp.previousElementSibling;
+    var newEl = null;
+    oInp.onclick = function () {
+        val = oText.value;
+        if (val) {
+            newEl = document.createElement('li');
+            newEl.innerHTML = val + '<a href="javascript:;">删除</a>';
+            oUl.insertBefore(newEl, oUl.children[0]);
+            newEl.children[0].onclick = function () {
+                oUl.removeChild(this.parentNode)
+            }
+        }
+    }
+</script>
+
+</html>

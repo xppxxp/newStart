@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn">
+        <p></p>
+        <img src="">
+    </div>
+</body>
+<script>
+    var nowTime = new Date().getHours();
+    var pMsg = '';
+    var imgUrl = '';
+    var oP = document.querySelector('#btn p');
+    var oImg = document.querySelector('img');
+    if (4 <= nowTime && nowTime <= 12) {
+        pMsg = '上午好';
+        imgUrl = 'https://img2.baidu.com/it/u=799994133,3798306713&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500';
+    } else if (12 < nowTime && nowTime < 20) {
+        pMsg = '下午好';
+        imgUrl = 'https://i1.hdslb.com/bfs/archive/fae655a2f642aa305424b0594ca2ea4057da6a3b.jpg';
+    } else {
+        pMsg = '晚上好';
+        imgUrl = 'https://file.fh21static.com/fhfile1/M00/0A/F6/ooYBAGEUkJGAIJ4AAAENaZUONJQ56.jpeg';
+    }
+    oP.innerHTML = pMsg;
+    oImg.src = imgUrl;
+
+</script>
+</html>

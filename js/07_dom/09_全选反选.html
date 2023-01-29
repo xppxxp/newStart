@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            border: 1px solid #c0c0c0;
+        }
+
+        thead {
+            font-weight: bold;
+            background-color: #09c;
+            color: #fff;
+        }
+
+        thead tr {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #d0d0d0;
+            text-align: center;
+        }
+
+        thead th {
+            border: 1px solid #d0d0d0;
+        }
+
+        tbody {
+            height: 40px;
+            line-height: 40px;
+            background-color: #fafafa;
+        }
+
+        tbody td {
+            padding-left: 20px;
+            border: 1px solid #d0d0d0;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="all_check"></th>
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var oTr = document.querySelectorAll('tbody tr');
+    var allCheck = document.querySelector('#all_check');
+    var aChecks = document.querySelectorAll('tbody input');
+
+    for (var i = 0; i < oTr.length; i++) {
+        oTr[i].onmouseover = function () {
+            this.style.background = 'pink';
+        }
+        oTr[i].onmouseout = function () {
+            this.style.background = '';
+        }
+    }
+
+    allCheck.onclick = function () {
+        for (var i = 0; i < aChecks.length; i++) {
+            aChecks[i].checked = this.checked;
+        }
+    }
+
+    for (var i = 0; i < aChecks.length; i++) {
+        aChecks[i].onclick = function () {
+            var flag = true;
+            for (var i = 0; i < aChecks.length; i++) {
+                if (!aChecks[i].checked) {
+                    flag = false;
+                    break;
+                } 
+            }
+            allCheck.checked = flag;
+           
+        }
+    }
+
+
+
+</script>
+
+</html>

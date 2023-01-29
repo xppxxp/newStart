@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3863370_k038z8jkoxk.css">
+    <style>
+        div {
+            margin: 50px auto;
+            width: 300px;
+
+        }
+
+        p {
+            display: inline-block;
+            margin: 0;
+            color: #999;
+            font-size: 12px;
+        }
+
+        i {
+            color: #00aeec;
+            vertical-align: bottom;
+        }
+
+        h1 {
+            float: left;
+            margin: 0;
+        }
+
+        .icon-red {
+            color: red;
+        }
+
+        .icon-green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text">
+        <p><i class="iconfont icon-gantanhao-yuankuang"></i>请输入6~16位密码</p>
+    </div>
+</body>
+<script>
+    var oInp = document.querySelector('div input');
+    var oP = document.querySelector('p');
+    oInp.onblur = function () {
+        this.flag = true;
+        var inpLen = this.value.length;
+        if (inpLen < 6 || inpLen > 16) {
+            oP.innerHTML = '<i class="iconfont icon-gantanhao-yuankuang icon-red"></i>输入的长度不符合要求';
+        } else {
+            oP.innerHTML = '<i class="iconfont icon-gantanhao-yuankuang icon-green"></i>输入正确！';
+
+        }
+    }
+
+    oInp.onfocus = function () {
+        if( this.flag ) {
+            oP.innerHTML = '<i class="iconfont icon-gantanhao-yuankuang"></i>请输入6~16位密码';
+        }
+    }
+
+</script>
+
+</html>

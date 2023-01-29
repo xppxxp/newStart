@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3863370_knz295ysuu.css">
+    <style>
+        .box {
+            width: 400px;
+            margin: 50px auto;
+            height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box input {
+            width: 370px;
+            height: 40px;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-indent: 20px;
+            /* vertical-align: bottom; */
+            display: inline-block;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password" id="pwd">
+        <i class="iconfont icon-no_eye"></i>
+    </div>
+</body>
+<script>
+    var oInp = document.getElementById('pwd');
+    var oI = document.querySelector('i');
+    var flag = 1;
+
+    oI.onclick = function () {
+        if (flag) {
+            oInp.type = 'input';
+            oI.className = 'iconfont icon-eye';
+            flag = 0;
+        } else {
+            oInp.type = 'password';
+            oI.className = 'iconfont icon-no_eye';
+            flag = 1;
+        }
+
+    }
+</script>
+<script>
+
+
+</script>
+
+</html>

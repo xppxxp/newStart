@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 240px;
+            height: 300px;
+            padding: 0;
+            margin: 50px auto;
+        }
+
+        ul::after,
+        ul::before {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        li {
+            width: 59px;
+            height: 20px;
+            padding-top: 28px;
+            list-style: none;
+            float: left;
+            background: url(./images/sprite.png) no-repeat;
+            background-position-x: center;
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        li:nth-child(4n){
+            border-right: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>购物</li>
+        <li>手机</li>
+        <li>战斗机</li>
+        <li>购物</li>
+        <li>手机</li>
+        <li>战斗机</li>
+        <li>购物</li>
+        <li>手机</li>
+        <li>战斗机</li>
+        <li>购物</li>
+        <li>手机</li>
+        <li>战斗机</li>
+    </ul>
+</body>
+<script>
+    var aLi = document.querySelectorAll('ul li');
+    for (var i = 0; i < aLi.length; i++) {
+        aLi[i].style.backgroundPositionY = -i * 44 + 3 + 'px';
+    }
+
+</script>
+
+</html>
