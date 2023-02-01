@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/06.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">我是佩奇</a></li>
+            <li><a href="#">啥是佩奇</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var oUl = document.querySelector('ul');
+        var aLi = document.querySelectorAll('ul li');
+        var oCloud = document.querySelector('.cloud');
+        var lastIndex = 0;
+        var leaveIndex = 0;
+        var current = 0;
+
+        for (let index = 0; index < aLi.length; index++) {
+            const element = aLi[index];
+            element.index = index;
+            element.addEventListener('mouseenter', function (ev) {
+                animation(oCloud, this.offsetLeft, function () {
+
+                });
+                aLi[lastIndex].removeAttribute('class');
+                element.setAttribute('class', 'current');
+                lastIndex = element.index;
+            })
+
+            element.addEventListener('mouseleave', function (ev) {
+                animation(oCloud, aLi[leaveIndex].offsetLeft, function () {
+
+                });
+                element.removeAttribute('class');
+                aLi[lastIndex].setAttribute('class', 'current');
+                
+            })
+
+            element.addEventListener('click', function (ev) {
+                leaveIndex = element.index;
+                animation(oCloud, this.offsetLeft, function () {
+                    element.setAttribute('class', 'current');
+                });
+            })
+        }
+
+
+
+    }
+
+    function animation(obj, target, callback) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            if (obj.offsetLeft == target) {
+                clearInterval(obj.timer);
+                callback && callback();
+            }
+            obj.style.left = obj.offsetLeft + step + 'px';
+        }, 30)
+    }
+
+</script>
+
+</html>

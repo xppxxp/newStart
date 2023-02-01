@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/01.css">
+</head>
+
+<body>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+<script>
+    window.addEventListener('load', function () {
+        var newTime = +new Date('2023-02-25 00:00:00');
+        var oH = document.querySelectorAll('div span')[0];
+        var oM = document.querySelectorAll('div span')[1];
+        var oS = document.querySelectorAll('div span')[2];
+        var hTime, mTime, sTime;
+        countDown()
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = Date.now();
+            var gap = newTime - nowTime;
+            hTime = Math.floor(gap / 1000 / 3600 ) > 10 ? Math.floor(gap / 1000 / 3600 ) : '0' + Math.floor(gap / 1000 / 3600 );
+            mTime = Math.floor(gap / 1000 / 60 % 60) > 10 ? Math.floor(gap / 1000 / 60 % 60) : '0' + Math.floor(gap / 1000 / 60 % 60);
+            sTime = Math.floor(gap / 1000 % 60) > 10 ? Math.floor(gap / 1000 % 60) : '0' + Math.floor(gap / 1000 % 60);
+            oH.innerHTML = hTime + '时';
+            oM.innerHTML = mTime + '分';
+            oS.innerHTML = sTime + '秒';
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+h1 {
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #00000030;
+  display: none;
+}
+.shadow .login {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #00000060;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150px, -100px);
+}
+.shadow .login h2 {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.shadow .login label {
+  width: 80px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+}
+.shadow .login span {
+  position: absolute;
+  width: 30px;
+  top: -10px;
+  right: -10px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #00000020;
+  background-color: #fff;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.line {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=./03.css.map */

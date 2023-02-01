@@ -1,0 +1,17 @@
+div {
+  width: 200px;
+  background-color: red;
+  height: 50px;
+  display: flex;
+  margin: 200px 0 0 100px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+div span {
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: aqua;
+}
+/*# sourceMappingURL=./01.css.map */

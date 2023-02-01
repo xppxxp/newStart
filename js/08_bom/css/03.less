@@ -1,0 +1,60 @@
+@w: 300px;
+@h: 200px;
+
+h1 {
+    cursor: pointer;
+    .line();
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00000030;
+    display: none;
+
+    .login {
+        position: absolute;
+        width: @w;
+        height: @h;
+        background-color: #fff;
+        box-shadow: 0 0 10px #00000060;
+        top: 50%;
+        left: 50%;
+        transform: translate(-0.5*@w, -0.5*@h);
+
+        h2 {
+            .line();
+        }
+
+        label {
+            width: 80px;
+            display: inline-block;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        span {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: -10px;
+            right: -10px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            box-shadow: 0 0 2px #00000020;
+            background-color: #fff;
+            font-size: 12px;
+            .line();
+            cursor: pointer;
+        }
+    }
+}
+
+.line {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}

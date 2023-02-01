@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/04.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="../07_dom/images/ldh.jpg" alt="ldh">
+        <div class="shadow"></div>
+        <div class="scale">
+            <img src="../07_dom/images/ldh.jpg" alt="ldh">
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var oWrapper = document.querySelector('.wrapper');
+        var oShadow = document.querySelector('.shadow');
+        var oScale = document.querySelector('.scale');
+        var oSmall = oWrapper.querySelectorAll('img')[0];
+        var oBig = oWrapper.querySelectorAll('img')[1];
+
+        oSmall.addEventListener('mouseover', function (ev) {
+            var offsetX = offX(oWrapper).x;
+            var offsetY = offX(oWrapper).y;
+            var scaleX = 0;
+            var scaleY = 0;
+            var y = this.offsetTop;
+            var h = this.offsetHeight;
+            var moveX = ev.pageX - offsetX;
+            var moveY = ev.pageY - offsetY;
+            moveX = moveX > 60 ? moveX - 50 : 10;
+            moveY = moveY > y + 50 ? moveY - 50 : y;
+            oShadow.style.display = 'block';
+            oScale.style.display = 'block';
+            oShadow.style.left = moveX + 'px';
+            oShadow.style.top = moveY + 'px';
+
+            oShadow.addEventListener('mouseover', function (ev) {
+                oShadow.style.display = 'block';
+                oScale.style.display = 'block';
+            });
+
+            oShadow.addEventListener('mousemove', move);
+
+
+            function move(ev) {
+                console.log(ev);
+                moveX = ev.pageX - offsetX;
+                moveY = ev.pageY - offsetY;
+                moveX = moveX > 60 ? moveX - 50 : 10;
+                moveX = moveX > 110 ? 110 : moveX;
+                moveY = moveY > y + 50 ? moveY - 50 : y;
+                moveY = moveY > h + y - 100 ? h + y - 100 : moveY;
+                scaleX = (moveX - 10) / 200;
+                scaleY = (moveY - y) / h;
+                oShadow.style.left = moveX + 'px';
+                oShadow.style.top = moveY + 'px';
+                oBig.style.left = -600 * scaleX + 'px';
+
+                oBig.style.top = -oBig.offsetHeight * scaleY + 'px';
+            }
+        });
+
+        oWrapper.addEventListener('mouseout', function (ev) {
+            oShadow.style.display = 'none';
+            oScale.style.display = 'none';
+        });
+
+        function offX(obj) {
+            var x = y = 0;
+            while (obj.offsetParent) {
+                x += obj.offsetLeft;
+                y += obj.offsetTop;
+                obj = obj.offsetParent;
+            }
+            return {
+                x: x,
+                y: y
+            }
+        }
+        function offX(obj) {
+            var x = y = 0;
+            while (obj.offsetParent) {
+                x += obj.offsetLeft;
+                y += obj.offsetTop;
+                obj = obj.offsetParent;
+            }
+            return {
+                x: x,
+                y: y
+            }
+        }
+    }
+
+</script>
+
+</html>

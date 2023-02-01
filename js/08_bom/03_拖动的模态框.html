@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/03.css">
+</head>
+
+<body>
+    <h1>点击，弹出登录框</h1>
+    <div class="shadow">
+        <div class="login">
+            <h2>登录会员</h2>
+            <div>
+                <label>用户名:</label><input type="text" placeholder="请输入用户名"><br>
+                <label>密码:</label><input type="password" placeholder="请输入密码">
+                <span>关闭</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var oH = document.querySelector('h1');
+        var oShadow = document.querySelector('.shadow');
+        var oLogin = document.querySelector('.login');
+        var oClose = oShadow.querySelector('.shadow span');
+        var x = y = 0;
+
+        oH.addEventListener('click', function (ev) {
+            oShadow.style.display = 'block';
+        });
+
+        oClose.addEventListener('click', function (ev) {
+            oShadow.style.display = 'none';
+        })
+
+        oLogin.addEventListener('mousedown', function (ev) {
+            oLogin.addEventListener('mousemove', move);
+            x = ev.clientX - oLogin.offsetLeft;
+            y = ev.clientY - oLogin.offsetTop;
+        })
+
+        oLogin.addEventListener('mouseup', function (ev) {
+            oLogin.removeEventListener('mousemove', move);
+        })
+
+        function move(ev) {
+            this.style.left = ev.clientX - x + 'px';
+            this.style.top = ev.clientY - y + 'px';
+        }
+
+
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/05.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="pics_wrap">
+            <li><a href="#"><img src="\lost\newStart\js\07_dom\images\1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="\lost\newStart\js\07_dom\images\2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="\lost\newStart\js\07_dom\images\3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="\lost\newStart\js\07_dom\images\4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="\lost\newStart\js\07_dom\images\1.jpg" alt=""></a></li>
+        </ul>
+        <a href="#" class="arrow-l">&lt;</a>
+        <a href="#" class="arrow-r">&gt;</a>
+        <ul class="dot">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var oWrapper = document.querySelector('.wrapper');
+        var oImgWrap = document.querySelector('.pics_wrap');
+        var aLiImg = document.querySelectorAll('.pics_wrap li');
+        var aLiDot = document.querySelectorAll('.dot li');
+        var oArrL = document.querySelector('.arrow-l');
+        var oArrR = document.querySelector('.arrow-r');
+        var oW = oWrapper.clientWidth;
+        var lastIndex = 0;
+
+
+        for (let index = 0; index < aLiDot.length; index++) {
+            const element = aLiDot[index];
+            element.index = index;
+            element.addEventListener('click', function (ev) {
+                clearInterval(timer);
+                aLiDot[lastIndex].removeAttribute('class', '');
+                this.setAttribute('class', 'active');
+                lastIndex = this.index;
+                animation(oImgWrap, -this.index * oW);
+                timer = setInterval(() => {
+                    aLiDot[lastIndex].removeAttribute('class', '');
+                    if (lastIndex == aLiDot.length - 1) {
+                        lastIndex = 0;
+                    } else {
+                        lastIndex++;
+                    }
+                    aLiDot[lastIndex].setAttribute('class', 'active');
+                    animation(oImgWrap, -lastIndex * oW);
+                }, 2000);
+            })
+        }
+
+        oArrR.addEventListener('click', function (ev) {
+            clearInterval(timer);
+            aLiDot[lastIndex].removeAttribute('class', '');
+            lastIndex++;
+            animation(oImgWrap, -lastIndex * oW);
+            if (lastIndex == aLiDot.length) {
+                animation(oImgWrap, -lastIndex * oW, 1);
+                lastIndex = 0;
+            }
+            aLiDot[lastIndex].setAttribute('class', 'active');
+            timer = setInterval(() => {
+                aLiDot[lastIndex].removeAttribute('class', '');
+                if (lastIndex == aLiDot.length - 1) {
+                    lastIndex = 0;
+                } else {
+                    lastIndex++;
+                }
+                aLiDot[lastIndex].setAttribute('class', 'active');
+                animation(oImgWrap, -lastIndex * oW);
+            }, 2000);
+        })
+
+        oArrL.addEventListener('click', function (ev) {
+            clearInterval(timer);
+            aLiDot[lastIndex].removeAttribute('class', '');
+            if (lastIndex == 0) {
+                oImgWrap.style.left = -aLiDot.length * oW + 'px';
+                lastIndex = aLiDot.length - 1;
+            } else {
+                lastIndex--;
+            }
+            aLiDot[lastIndex].setAttribute('class', 'active');
+            animation(oImgWrap, -lastIndex * oW);
+            timer = setInterval(() => {
+                aLiDot[lastIndex].removeAttribute('class', '');
+                if (lastIndex == aLiDot.length - 1) {
+                    lastIndex = 0;
+                } else {
+                    lastIndex++;
+                }
+                aLiDot[lastIndex].setAttribute('class', 'active');
+                animation(oImgWrap, -lastIndex * oW);
+            }, 2000);
+        })
+
+        var timer = setInterval(() => {
+            aLiDot[lastIndex].removeAttribute('class', '');
+            if (lastIndex == aLiDot.length - 1) {
+                lastIndex = 0;
+            } else {
+                lastIndex++;
+            }
+            aLiDot[lastIndex].setAttribute('class', 'active');
+            animation(oImgWrap, -lastIndex * oW);
+        }, 2000);
+
+        function animation(obj, target, callback) {
+            var left = parseInt(obj.style.left) || 0;
+            var speed = target < left ? 25 : -25;
+            clearInterval(obj.timer);
+            obj.timer = setInterval(() => {
+                if (left == target) {
+                    clearInterval(obj.timer);
+                    if (callback == 1) {
+                        left = 0;
+                    } else if (callback == 2) {
+                    }
+                }
+                obj.style.left = left + 'px';
+                left -= speed;
+            }, 30);
+        }
+
+    }
+
+
+
+
+</script>
+
+</html>
